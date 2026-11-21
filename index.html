@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Language Translator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <i class="fas fa-language"></i>
+                <h1>AI Language Translator</h1>
+            </div>
+            <button id="themeToggle" class="icon-btn" title="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======= Main ======= -->
+    <main class="container">
+
+        <!-- Language selector bar -->
+        <div class="lang-bar">
+            <div class="lang-select-wrapper">
+                <label for="sourceLang">From</label>
+                <select id="sourceLang"></select>
+            </div>
+
+            <button id="swapBtn" class="swap-btn" title="Swap languages">
+                <i class="fas fa-right-left"></i>
+            </button>
+
+            <div class="lang-select-wrapper">
+                <label for="targetLang">To</label>
+                <select id="targetLang"></select>
+            </div>
+        </div>
+
+        <!-- Translation panels -->
+        <div class="translator-grid">
+
+            <!-- Input panel -->
+            <div class="panel panel-input">
+                <div class="panel-header">
+                    <span class="panel-label">Source Text</span>
+                    <span id="charCount" class="char-counter">0 / 5000</span>
+                </div>
+                <textarea id="sourceText" placeholder="Type or paste text here…" maxlength="5000"
+                    spellcheck="true"></textarea>
+                <div class="panel-actions">
+                    <button id="clearBtn" class="icon-btn" title="Clear text">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                    <button id="speakSourceBtn" class="icon-btn" title="Listen to source text">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Output panel -->
+            <div class="panel panel-output">
+                <div class="panel-header">
+                    <span class="panel-label">Translation</span>
+                    <div id="loader" class="loader hidden"></div>
+                </div>
+                <div id="outputText" class="output-text" tabindex="0">
+                    <span class="placeholder-text">Translation will appear here…</span>
+                </div>
+                <div class="panel-actions">
+                    <button id="copyBtn" class="icon-btn" title="Copy translation">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                    <button id="speakTargetBtn" class="icon-btn" title="Listen to translation">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Translate button -->
+        <button id="translateBtn" class="translate-btn">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            <span>Translate</span>
+        </button>
+
+        <!-- Error toast -->
+        <div id="toast" class="toast hidden"></div>
+
+        <!-- Translation History -->
+        <section class="history-section">
+            <div class="history-header">
+                <h2><i class="fas fa-clock-rotate-left"></i> Translation History</h2>
+                <button id="clearHistoryBtn" class="icon-btn" title="Clear history">
+                    <i class="fas fa-trash-can"></i>
+                </button>
+            </div>
+            <div id="historyList" class="history-list">
+                <p class="history-empty">No translations yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer">
+        <p>Built with <i class="fas fa-heart"></i> — AI Language Translator &copy; 2026</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
